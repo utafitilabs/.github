@@ -1,27 +1,27 @@
-# uhifadhi
+# Utafiti Labs
 
-**The open-source observatory for nature conservation and protected areas.**
+Software for the people who look after wild places: research, conservation and
+the field work behind both. *Utafiti* is Swahili for research.
 
-An installation of uhifadhi is one organisation's own observatory over the
-protected areas it manages: the gazetted boundaries and the zones inside them,
-the people and the positions they hold, and the capabilities the organisation
-actually runs. Those capabilities — patrols, incidents, rosters — arrive as
-**modules** that an administrator installs and switches on for the areas that
-want them. An area that runs no patrols never sees the patrol screens.
+## What we build
 
-> **A module registers with the registry and renders in the shell.**
-
-## Where to go
-
-| Repository | What it is for |
+| Project | What it is |
 |---|---|
-| [`uhifadhi/skeleton`](https://github.com/utafitilabs/skeleton) | Install an observatory — `composer create-project uhifadhi/skeleton` |
-| [`uhifadhi/uhifadhi`](https://github.com/utafitilabs/uhifadhi) | The core: the registry, the shell, the team, the areas and the atlas — for building modules and updating installations |
-| `uhifadhi/<name>-module` | One capability each, installed with `composer require`: [patrol](https://github.com/utafitilabs/patrol-module), [incident](https://github.com/utafitilabs/incident-module), [storage](https://github.com/utafitilabs/storage-module), [roster](https://github.com/utafitilabs/roster-module) |
+| [**uhifadhi**](https://github.com/utafitilabs/skeleton) | The open-source observatory for nature conservation and protected areas — one installation per organisation, capabilities as modules. Start with `composer create-project uhifadhi/skeleton`; the core is [`uhifadhi/uhifadhi`](https://github.com/utafitilabs/uhifadhi), the modules are `uhifadhi/<name>-module`. |
+| **Doria** | The uhifadhi field app for rangers' handsets — patrols, observations, check-ins — free to use, built to keep working without signal. Downloads at [downloads](https://github.com/utafitilabs/downloads). |
+| [`utafitilabs/postgis-bundle`](https://github.com/utafitilabs/postgis-bundle) | Typed PostGIS geometry for Doctrine and Symfony, with the DQL functions to query it. Generic: any Symfony application. |
+| [`utafitilabs/postgis`](https://github.com/utafitilabs/postgis) | The PostGIS container image the platform and its test suites run on. |
 
-## Licence
+Everything generic — a bundle any Symfony application could install unchanged —
+ships as `utafitilabs/<name>`. Everything that is a piece of uhifadhi ships as
+`uhifadhi/<name>`.
 
-**AGPL-3.0-or-later** for the core and the skeleton; **MIT** for the contracts,
-because an interface anybody may implement should cost nobody anything.
+## Licences
+
+**AGPL-3.0-or-later** for uhifadhi's core, starter and modules, so that a
+modified observatory offered over a network stays open to the people using it.
+**MIT** for the contracts a module implements, because an interface anybody may
+implement should cost nobody anything. Generic bundles carry their own licence
+in their repository.
 
 Science is never paywalled.
